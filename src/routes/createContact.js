@@ -1,5 +1,5 @@
 import express from "express";
-import createContact from "../services/createContact";
+import createContact from "../services/createContact.js";
 const router = express.Router()
 
 router.post("/createContact", (req, res) => {

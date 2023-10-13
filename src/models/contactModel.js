@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const contactSchema = new mongoose.Schema({
   surname: {
@@ -12,7 +12,7 @@ const contactSchema = new mongoose.Schema({
   mail: {
     type: String,
     required: true,
-    unique: true // L'adresse mail doit être unique
+    unique: true
   },
   phoneNumber: {
     type: String,
@@ -20,6 +20,4 @@ const contactSchema = new mongoose.Schema({
   }
 });
 
-const Contact = mongoose.model('Contact', contactSchema);
-
-module.exports = Contact;
+export default mongoose.model('Contact', contactSchema);
