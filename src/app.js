@@ -9,8 +9,9 @@ import editContact from "./routes/editContact.js";
 
 export async function init() {
   const app = express();
+  app.use(express.json());
   const server = http.createServer(app);
-  mongoose.connect('mongodb://localhost:27017', {
+  mongoose.connect('mongodb://localhost:27017/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });

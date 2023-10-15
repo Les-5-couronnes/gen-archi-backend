@@ -2,9 +2,8 @@ import express from "express";
 import createContact from "../services/createContact.js";
 const router = express.Router()
 
-router.post("/createContact", (req, res) => {
-    createContact(req.body);
-    res.send("Contact has been created");
+router.post("/createContact", async(req, res) => {
+    return await createContact(req, res);
 });
 
 export default router;
