@@ -10,7 +10,7 @@ export default async function deleteContact(req, res) {
       return res.status(404).json({ message: "Contact non trouvé." });
     }
     await contact.deleteOne();
-    res.status(204).end(); 
+    res.status(204).json(contact).end(); 
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Une erreur est survenue lors de la suppression du contact." });
