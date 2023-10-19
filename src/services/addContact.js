@@ -1,6 +1,6 @@
 import contactModel from '../models/contactModel.js';
 
-export default async function createContact(req, res) {
+export default async function addContact(req, res) {
   const { surname, name, mail, phoneNumber } = req.body;
   const existingContact = await contactModel.findOne({ mail: mail });
   if (existingContact) {

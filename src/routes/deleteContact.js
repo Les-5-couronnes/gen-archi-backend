@@ -2,7 +2,7 @@ import express from "express";
 import deleteContact from "../services/deleteContact.js";
 const router = express.Router()
 
-router.delete("/deleteContact/:email", async (req, res) => {
+router.delete("/delete-contact", async (req, res) => {
     await deleteContact(req, res);
 });
 

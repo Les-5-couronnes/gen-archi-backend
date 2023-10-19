@@ -1,7 +1,7 @@
 import contactModel from '../models/contactModel.js';
 
 export default async function deleteContact(req, res) {
-    const email = req.params.email;
+    const email = req.body.mail;
 
   try {   
     const contact = await contactModel.findOne({ mail: email });
@@ -12,7 +12,6 @@ export default async function deleteContact(req, res) {
     await contact.deleteOne();
     res.status(204).json(contact).end(); 
   } catch (error) {
-    console.log(error);
     res.status(500).json({ message: "Une erreur est survenue lors de la suppression du contact." });
   }
 }
