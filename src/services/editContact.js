@@ -16,7 +16,7 @@ export default async function editContact(req, res) {
 
         await existingContact.save();
 
-        res.status(200).json({ message: "Contact mis à jour avec succès." });
+        res.status(200).json(existingContact);
     } catch (error) {
         res.status(500).json({ message: "Une erreur est survenue lors de la mise à jour du contact." });
     }
