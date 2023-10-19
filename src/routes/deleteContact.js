@@ -1,8 +1,9 @@
 import express from "express";
+import deleteContact from "../services/deleteContact.js";
 const router = express.Router()
 
-router.get("/deleteContact/:id", (req, res) => {
-    res.send("Contact : " + req.params.id + " has been deleted");
+router.delete("/delete-contact", async (req, res) => {
+    await deleteContact(req, res);
 });
 
 export default router;
