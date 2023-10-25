@@ -11,7 +11,7 @@ export async function init() {
   const app = express();
   app.use(express.json());
   const server = http.createServer(app);
-  mongoose.connect('mongodb://localhost:27017/test', {
+  mongoose.connect('mongodb://admin:password@75.101.234.69:27017/?authMechanism=DEFAULT', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
