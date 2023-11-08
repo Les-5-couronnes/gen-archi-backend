@@ -1,5 +1,6 @@
 import express from "express";
 import http from "http";
+import cors from "cors";
 import mongoose from "mongoose";
 import health from "./routes/health.js";
 import addContact from "./routes/addContact.js";
@@ -10,7 +11,7 @@ import dotenv from 'dotenv';
 
 
 export async function init() {
-  dotenv.config();  
+  dotenv.config();
   const app = express();
   app.use(express.json());
   const server = http.createServer(app);
@@ -22,6 +23,7 @@ export async function init() {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
+  app.use(cors());
   app.use(health);
   app.use(addContact);
   app.use(deleteContact);
