@@ -14,6 +14,8 @@ export async function init() {
   dotenv.config();
   const app = express();
   app.use(express.json());
+  app.use(cors());
+
   const server = http.createServer(app);
 
   const mongoDBUri = 'mongodb://'+process.env.MONGO_DB_URI+':27017/contact';
@@ -23,7 +25,6 @@ export async function init() {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
-  app.use(cors());
   app.use(health);
   app.use(addContact);
   app.use(deleteContact);
