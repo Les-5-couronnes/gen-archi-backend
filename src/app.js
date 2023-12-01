@@ -23,7 +23,9 @@ export async function init() {
 
   mongoose.connect(mongoDBUri, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    user: "admin",
+    pass: "admin",
   });
   app.use(health);
   app.use(addContact);
