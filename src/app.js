@@ -26,6 +26,7 @@ export async function init() {
     useUnifiedTopology: true,
     user: "admin",
     pass: "admin",
+    autoCreate: true,
   });
   app.use(health);
   app.use(addContact);
