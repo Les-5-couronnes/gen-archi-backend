@@ -18,14 +18,15 @@ export async function init() {
 
   const server = http.createServer(app);
 
-  const mongoDBUri = 'mongodb://'+process.env.MONGO_DB_URI+':27017/contact';
+  const mongoDBUri = 'mongodb://admin:admin@'+process.env.MONGO_DB_URI+':27017/admin';
+
   console.log(mongoDBUri);
 
   mongoose.connect(mongoDBUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    user: "admin",
-    pass: "admin",
+    // user: "admin",
+    // pass: "admin",
     autoCreate: true,
   });
   app.use(health);
